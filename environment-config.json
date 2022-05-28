@@ -1,0 +1,14 @@
+{
+    "HOST": "localhost",
+    "USER": "mehmet",
+    "PASSWORD": "mehmet",
+    "DB": "family",
+    "dialect": "mysql",
+    "port" : 3001,
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+}
