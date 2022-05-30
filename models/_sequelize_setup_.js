@@ -2,7 +2,7 @@ import Sequelize from 'sequelize';
 //import dbConfig from "../environment-config.json";
 
 import UserModel from "./user-model.js"
-import BasicInfoModel from "./basicInfo-model.js"
+
 
 
 // const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
@@ -31,12 +31,12 @@ db.sequelize = sequelize;
 
 
 db.users = UserModel(sequelize, Sequelize);
-db.basicInfo = BasicInfoModel(sequelize, Sequelize);
 
 
 
-db.users.hasMany(db.basicInfo);
-db.basicInfo.belongsTo(db.users);
+
+
+
 
 // db.familyMember.hasMany(db.agenda);
 // db.agenda.belongsTo(db.familyMember);
