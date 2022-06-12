@@ -15,6 +15,10 @@ res.status(200).send(await userService.getUserByEmail(req.params.email))));
 router.post('/', asyncHandler(async (req, res, next) => 
 res.status(200).send(await userService.createUser(req.body))));
 
+router.post('/check', asyncHandler(async (req, res, next) => 
+res.status(200).send(await userService.checkUser(req.body))));
+
+
 router.put('/:id', asyncHandler(async (req, res, next) => 
 res.status(200).send(await userService.updateUser(req.params.id, req.body))));
 
