@@ -1,5 +1,5 @@
 import * as userRepository from '../persistency/user-repository.js'
-import config from '../environment-config.json';
+
 
 
 export async function createUser(pMember){
