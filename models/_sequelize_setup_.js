@@ -18,7 +18,7 @@ import UserModel from "./user-model.js"
 //   }
 // });
 
-const sequelize = new Sequelize('my_db', 'root', 'Sakmak4326', {
+const sequelize = new Sequelize('fidi', 'root', 'emre2199', {
   host: "localhost",
   dialect: "mysql",
   port: 3306
