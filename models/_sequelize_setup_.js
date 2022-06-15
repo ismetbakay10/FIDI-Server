@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize';
+import Sequelize from "sequelize";
 //import dbConfig from "../environment-config.json";
 
 import UserModel from "./user-model.js"
@@ -19,10 +19,10 @@ import GolModel from "./gol.js"
 //   }
 // });
 
-const sequelize = new Sequelize('my_db', 'root', 'Sakmak4326', {
+const sequelize = new Sequelize("fidi", "root", "159753.iB", {
   host: "localhost",
   dialect: "mysql",
-  port: 3306
+  port: 3306,
 });
 
 const db = {};
@@ -30,8 +30,13 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-
 db.users = UserModel(sequelize, Sequelize);
+
+users.hasMany(income);
+income.belongsTo(users);
+
+users.hasMany(expenses);
+expenses.belongsTo(users);
 
 
 
@@ -45,7 +50,6 @@ db.users = UserModel(sequelize, Sequelize);
 
 // db.family.hasMany(db.agenda);
 // db.agenda.belongsTo(db.family);
-
 
 // db.familyMember.belongsToMany(db.punishment, {
 //   through: "familyMember_punishment",
@@ -71,13 +75,10 @@ db.users = UserModel(sequelize, Sequelize);
 //   foreignKey: "rewards_id",
 // });
 
-
-// use it to force to create the db from scratch 
+// use it to force to create the db from scratch
 // .sync({ force: true })
 db.sequelize.sync().then(() => {
-    console.log("Drop and re-sync db.");
+  console.log("Drop and re-sync db.");
 });
 
 export default db;
-
-
