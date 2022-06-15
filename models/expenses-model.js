@@ -1,14 +1,14 @@
 export default (sequelize, Sequelize) => {
   return sequelize.define("expenses", {
-    id_expenses: {
+    id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     explanation: {
       type: Sequelize.STRING,
     },
-    expenses: {
+    amount: {
       type: Sequelize.INTEGER,
     }
   });

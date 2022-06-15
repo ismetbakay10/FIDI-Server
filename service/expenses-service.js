@@ -1,37 +1,20 @@
 import * as expensesRepository from '../persistency/expenses-repository.js'
 
 
-export async function createexpenses(pMember){
+export async function createExpenses(pMember){
     return await expensesRepository.create(pMember);
 }
 
-// export async function checkexpenses(pExpenses){
-//     console.log(pExpenses.email)
-//     const isexpensesExisting = await expensesRepository.isexpensesExistingByEmail(pExpenses.email)
-//     if(isexpensesExisting){
-//         return {
-//             allowLogin:true
-//         }
-//     }
-//     else{
-//         const expenses = await expensesRepository.create(pExpenses);
-//         //EMAIL BURDA OLACAK
-//         return {
-//             allowLogin:true
-//         }
-        
-//     }
-// }
 
-export async function deleteexpenses(pId){
+export async function deleteExpenses(pId){
     return await expensesRepository.remove(pId);
 }
 
-export async function getAllexpenses(){
+export async function getAllExpenses(){
     return await expensesRepository.getAll();
 }
 
-export async function getexpensesById(pId){
+export async function getExpensesById(pId){
     return await expensesRepository.findById(pId);
 }
 // export async function getexpensesByEmail(pEmail){

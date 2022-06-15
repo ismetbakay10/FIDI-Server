@@ -20,13 +20,13 @@ export async function create(pEntity){
 
 export async function remove(pId){
   return await db.income.destroy({
-    where: { id: pId }
+    where: { id_income: pId }
   })
 }
 
 export async function update(pId, pUpdatedEntity){
   return await db.income.update(pUpdatedEntity, {
-    where: { id: pId }
+    where: { id_income: pId }
   });
 }
 

@@ -2,7 +2,9 @@ import Sequelize from "sequelize";
 //import dbConfig from "../environment-config.json";
 
 import UserModel from "./user-model.js"
-import GolModel from "./gol.js"
+import IncomeModel from "./income-model.js"
+import ExpensesModel from "./expenses-model.js"
+
 
 
 
@@ -19,7 +21,7 @@ import GolModel from "./gol.js"
 //   }
 // });
 
-const sequelize = new Sequelize("fidi", "root", "159753.iB", {
+const sequelize = new Sequelize("fidi", "root", "Sakmak4326", {
   host: "localhost",
   dialect: "mysql",
   port: 3306,
@@ -31,12 +33,18 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.users = UserModel(sequelize, Sequelize);
+db.income = IncomeModel(sequelize, Sequelize);
+db.expenses = ExpensesModel(sequelize, Sequelize);
 
-users.hasMany(income);
-income.belongsTo(users);
+db.users.hasMany(db.income);
+db.income.belongsTo(db.users);
 
-users.hasMany(expenses);
-expenses.belongsTo(users);
+db.users.hasMany(db.expenses);
+db.expenses.belongsTo(db.users);
+
+
+
+
 
 
 
