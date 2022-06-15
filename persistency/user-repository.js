@@ -8,6 +8,12 @@ export async function findById(pId){
   return await db.users.findByPk(pId);
 }
 
+export async function findByEmail(pEmail){
+  return await db.users.findOne({
+    where: { email: pEmail}
+  });
+}
+
 export async function create(pEntity){
   return await db.users.create(pEntity);
 }
@@ -28,6 +34,14 @@ export async function findByUserId(pUserId){
   return await db.users.findOne({
     where: { userId: pUserId}
   });
+}
+
+
+export async function isUserExistingByEmail(pEmail){
+const emailAcount= await db.users.count({
+    where: { email: pEmail}
+  });
+  return emailAcount == 0 ? false :true;
 }
 
 

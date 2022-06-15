@@ -1,9 +1,26 @@
 import * as userRepository from '../persistency/user-repository.js'
 
 
-
 export async function createUser(pMember){
     return await userRepository.create(pMember);
+}
+
+export async function checkUser(pUser){
+    console.log(pUser.email)
+    const isUserExisting = await userRepository.isUserExistingByEmail(pUser.email)
+    if(isUserExisting){
+        return {
+            allowLogin:true
+        }
+    }
+    else{
+        const user = await userRepository.create(pUser);
+        //EMAIL BURDA OLACAK
+        return {
+            allowLogin:true
+        }
+        
+    }
 }
 
 export async function deleteUser(pId){
@@ -23,5 +40,8 @@ export async function getUserByEmail(pEmail){
 export async function updateUser(pId, pUpdateEntity){
     return await userRepository.update(pId, pUpdateEntity);
 }
+
+
+
 
 

@@ -1,17 +1,19 @@
 import express from 'express';
 
-import path from 'path';
+
 
 // Middlewares
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import cors from 'cors';
 
-// import swaggerUi from 'swagger-ui-express';
-// import swaggerDocument from './swagger.json';
 
 // Routers
 import userRouter from './routes/user-router.js'
+import incomeRouter from "./routes/income-router.js";
+import expensesRouter from "./routes/expenses-router.js";
+
+
 
 
 let app = express();
@@ -24,11 +26,14 @@ app.use(cors());
 
 // Routers
 app.use('/users', userRouter);
+app.use("/income", incomeRouter);
+app.use("/expenses", expensesRouter);
 
 
 
 
-//app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
 
 
 app.listen(3001, ()=>{

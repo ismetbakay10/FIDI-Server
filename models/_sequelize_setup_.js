@@ -1,7 +1,9 @@
 import Sequelize from "sequelize";
 //import dbConfig from "../environment-config.json";
 
-import UserModel from "./user-model.js";
+import UserModel from "./user-model.js"
+
+
 
 // const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
 //   host: dbConfig.HOST,
@@ -28,6 +30,18 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.users = UserModel(sequelize, Sequelize);
+
+users.hasMany(income);
+income.belongsTo(users);
+
+users.hasMany(expenses);
+expenses.belongsTo(users);
+
+
+
+
+
+
 
 // db.familyMember.hasMany(db.agenda);
 // db.agenda.belongsTo(db.familyMember);
