@@ -8,7 +8,6 @@ import logger from 'morgan';
 import cors from 'cors';
 
 
-
 // Routers
 import userRouter from './routes/user-router.js'
 
@@ -23,6 +22,7 @@ app.use(cors());
 
 // Routers
 app.use('/users', userRouter);
+
 
 
 

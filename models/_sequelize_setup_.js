@@ -2,6 +2,7 @@ import Sequelize from 'sequelize';
 //import dbConfig from "../environment-config.json";
 
 import UserModel from "./user-model.js"
+import GolModel from "./gol.js"
 
 
 
@@ -31,6 +32,7 @@ db.sequelize = sequelize;
 
 
 db.users = UserModel(sequelize, Sequelize);
+
 
 
 
