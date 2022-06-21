@@ -17,10 +17,8 @@ export async function getAllExpenses(){
 export async function getExpensesById(pId){
     return await expensesRepository.findById(pId);
 }
-// export async function getexpensesByEmail(pEmail){
-//     return await expensesRepository.findByEmail(pEmail);
-// }
-export async function updateexpenses(pId, pUpdateEntity){
+
+export async function updateExpenses(pId, pUpdateEntity){
     return await expensesRepository.update(pId, pUpdateEntity);
 }
 
