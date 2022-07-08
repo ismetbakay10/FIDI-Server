@@ -8,11 +8,11 @@ export async function findById(pId){
   return await db.income.findByPk(pId);
 }
 
-// export async function findByEmail(pEmail){
-//   return await db.income.findOne({
-//     where: { email: pEmail}
-//   });
-// }
+export async function findByEmail(pEmail){
+  return await db.income.findOne({
+    where: { email: pEmail}
+  });
+}
 
 export async function create(pEntity){
   return await db.income.create(pEntity);
@@ -20,13 +20,13 @@ export async function create(pEntity){
 
 export async function remove(pId){
   return await db.income.destroy({
-    where: { id_income: pId }
+    where: { id: pId }
   })
 }
 
 export async function update(pId, pUpdatedEntity){
   return await db.income.update(pUpdatedEntity, {
-    where: { id_income: pId }
+    where: { id: pId }
   });
 }
 

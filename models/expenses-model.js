@@ -6,10 +6,10 @@ export default (sequelize, Sequelize) => {
       autoIncrement: true
     },
     explanation: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING
     },
     amount: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.INTEGER
     }
   });
 };

@@ -5,23 +5,7 @@ import UserModel from "./user-model.js"
 import IncomeModel from "./income-model.js"
 import ExpensesModel from "./expenses-model.js"
 
-
-
-
-// const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-//   host: dbConfig.HOST,
-//   dialect: dbConfig.dialect,
-//   operatorsAliases: false,
-//   port: dbConfig.port,
-//   pool: {
-//     max: dbConfig.pool.max,
-//     min: dbConfig.pool.min,
-//     acquire: dbConfig.pool.acquire,
-//     idle: dbConfig.pool.idle
-//   }
-// });
-
-const sequelize = new Sequelize("fidi", "root", "Sakmak4326", {
+const sequelize = new Sequelize("fidi", "root", "159753.iB", {
   host: "localhost",
   dialect: "mysql",
   port: 3306,

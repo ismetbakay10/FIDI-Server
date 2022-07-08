@@ -8,11 +8,11 @@ export async function findById(pId){
   return await db.expenses.findByPk(pId);
 }
 
-// export async function findByEmail(pEmail){
-//   return await db.expenses.findOne({
-//     where: { email: pEmail}
-//   });
-// }
+export async function findByEmail(pEmail){
+  return await db.expenses.findOne({
+    where: { email: pEmail}
+  });
+}
 
 export async function create(pEntity){
   return await db.expenses.create(pEntity);
@@ -37,11 +37,11 @@ export async function findByUserId(pUserId){
 }
 
 
-// export async function isUserExistingByEmail(pEmail){
-// const emailAcount= await db.expenses.count({
-//     where: { email: pEmail}
-//   });
-//   return emailAcount == 0 ? false :true;
-// }
+export async function isUserExistingByEmail(pEmail){
+const emailAcount= await db.expenses.count({
+    where: { email: pEmail}
+  });
+  return emailAcount == 0 ? false :true;
+}
 
 

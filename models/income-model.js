@@ -1,15 +1,15 @@
 export default (sequelize, Sequelize) => {
   return sequelize.define("income", {
-    id_income: {
+    id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     explanation: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING
     },
-    income: {
-      type: Sequelize.INTEGER,
+    amount: {
+      type: Sequelize.INTEGER
     }
   });
 };
